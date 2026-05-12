@@ -1,0 +1,222 @@
+@use "sass:math";
+@import "_/_Lib";
+@import "_/Core";
+@import "Lalilo";
+@import "_/Bootstrap";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: Arial, "Noto Sans TC", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.lhr60-page {
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.feature-section {
+  position: relative;
+  width: 100%;
+  min-height: 56.25vw;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 10vw;
+    padding-left: 5.8vw;
+    padding-right: 5.8vw;
+
+    h1,
+    h2 {
+      margin: 0 0 2.4vw;
+      font-size: clamp(42px, 4.4vw, 86px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      width: 52%;
+      margin: 0;
+      font-size: clamp(18px, 1.38vw, 28px);
+      line-height: 1.55;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      margin-left: auto;
+      padding-left: 52vw;
+
+      p {
+        width: 100%;
+        max-width: 560px;
+      }
+    }
+  }
+}
+
+/* 區塊 1 */
+.feature-section--high-speed {
+  .feature-section__content {
+    h1 {
+      width: 60%;
+    }
+  }
+}
+
+/* 區塊 2 */
+.feature-section--vrr {
+  .feature-section__content {
+    padding-top: 9.2vw;
+
+    h2 {
+      width: 42%;
+    }
+
+    p {
+      width: 42%;
+    }
+  }
+}
+
+/* 區塊 3 */
+.feature-section--quality {
+  .feature-section__content {
+    padding-top: 14vw;
+
+    h2 {
+      width: 100%;
+    }
+  }
+}
+
+/* iPad / 平板 */
+@media (max-width: 1199px) {
+  .feature-section {
+    min-height: 72.65vw;
+
+    &__content {
+      padding-top: 11.6vw;
+      padding-left: 4.8vw;
+      padding-right: 4.8vw;
+
+      h1,
+      h2 {
+        font-size: clamp(44px, 5.2vw, 66px);
+        margin-bottom: 3vw;
+      }
+
+      p {
+        width: 65%;
+        font-size: clamp(22px, 2.2vw, 28px);
+        line-height: 1.55;
+      }
+
+      &--right {
+        padding-left: 50vw;
+
+        p {
+          max-width: 480px;
+        }
+      }
+    }
+  }
+
+  .feature-section--high-speed {
+    .feature-section__content {
+      h1 {
+        width: 72%;
+      }
+    }
+  }
+
+  .feature-section--vrr {
+    .feature-section__content {
+      h2,
+      p {
+        width: 50%;
+      }
+    }
+  }
+}
+
+/* 手機 */
+@media (max-width: 767px) {
+  .feature-section {
+    min-height: 177.8vw;
+
+    &__content {
+      padding-top: 9.6vw;
+      padding-left: 5.3vw;
+      padding-right: 5.3vw;
+
+      h1,
+      h2 {
+        width: 100%;
+        font-size: clamp(42px, 12vw, 68px);
+        line-height: 1.18;
+        margin-bottom: 3.5vw;
+      }
+
+      p {
+        width: 100%;
+        font-size: clamp(24px, 5.4vw, 34px);
+        line-height: 1.5;
+      }
+
+      &--right {
+        padding-left: 5.3vw;
+      }
+    }
+  }
+
+  .feature-section--high-speed,
+  .feature-section--vrr,
+  .feature-section--quality {
+    .feature-section__content {
+      h1,
+      h2,
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
