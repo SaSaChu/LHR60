@@ -14,7 +14,12 @@ body {
   padding: 0;
   background: #000;
   color: #fff;
+  font-size: 13px;
   font-family: Arial, "Noto Sans TC", sans-serif;
+}
+
+.mobile-break {
+  display: inline;
 }
 
 img {
@@ -62,8 +67,8 @@ img {
     h1,
     h2 {
       margin: 0 0 2.4vw;
-      font-size: clamp(42px, 4.4vw, 86px);
-      line-height: 1.08;
+      font-size: clamp(64px, 3.8vw, 64px);
+      line-height: 1.4;
       font-weight: 800;
       letter-spacing: -0.03em;
     }
@@ -71,8 +76,8 @@ img {
     p {
       width: 52%;
       margin: 0;
-      font-size: clamp(18px, 1.38vw, 28px);
-      line-height: 1.55;
+      font-size: clamp(24px, 1.5vw, 24px);
+      line-height: 1.6;
       font-weight: 400;
       color: rgba(255, 255, 255, 0.92);
     }
@@ -87,7 +92,7 @@ img {
 
       p {
         width: 100%;
-        max-width: 560px;
+        /*max-width: 560px;*/
       }
     }
   }
@@ -120,7 +125,7 @@ img {
 /* 區塊 3 */
 .feature-section--quality {
   .feature-section__content {
-    padding-top: 14vw;
+    padding-top: 27vw;
 
     h2 {
       width: 100%;
@@ -130,11 +135,15 @@ img {
 
 /* iPad / 平板 */
 @media (max-width: 1199px) {
+  .mobile-break {
+    display: inline;
+  }
+
   .feature-section {
     min-height: 72.65vw;
 
     &__content {
-      padding-top: 11.6vw;
+      padding-top: 5.2vw !important;
       padding-left: 4.8vw;
       padding-right: 4.8vw;
 
@@ -146,7 +155,7 @@ img {
 
       p {
         width: 65%;
-        font-size: clamp(22px, 2.2vw, 28px);
+        font-size: clamp(18px, 2vw, 18px);
         line-height: 1.55;
       }
 
@@ -163,16 +172,48 @@ img {
   .feature-section--high-speed {
     .feature-section__content {
       h1 {
-        width: 72%;
+        width: 76%;
       }
     }
   }
 
   .feature-section--vrr {
     .feature-section__content {
-      h2,
+      h2 {
+        width: 65%;
+      }
+
       p {
-        width: 50%;
+        width: 40%;
+      }
+    }
+  }
+
+  /* iPad 第三區塊：Premium Quality */
+  .feature-section--quality {
+    .feature-section__content {
+      position: absolute;
+      z-index: 2;
+
+      top: 46%;
+      right: 6.5vw;
+      transform: translateY(-10%);
+
+      width: 32vw;
+      padding: 0 !important;
+
+      h2 {
+        width: 100%;
+        margin-bottom: 2vw;
+        font-size: clamp(44px, 5.2vw, 66px);
+        line-height: 1.08;
+      }
+
+      p {
+        width: 100%;
+        max-width: none;
+        font-size: clamp(18px, 2vw, 18px);
+        line-height: 1.55;
       }
     }
   }
@@ -180,30 +221,42 @@ img {
 
 /* 手機 */
 @media (max-width: 767px) {
+  .mobile-break {
+    display: block;
+  }
+
   .feature-section {
     min-height: 177.8vw;
 
     &__content {
-      padding-top: 9.6vw;
+      padding-top: 4.2vw !important;
       padding-left: 5.3vw;
       padding-right: 5.3vw;
 
       h1,
       h2 {
         width: 100%;
-        font-size: clamp(42px, 12vw, 68px);
+        font-size: clamp(36px, 2.2rem, 36px);
         line-height: 1.18;
         margin-bottom: 3.5vw;
       }
 
       p {
         width: 100%;
-        font-size: clamp(24px, 5.4vw, 34px);
+        font-size: clamp(16px, 1.5rem, 16px);
         line-height: 1.5;
       }
 
       &--right {
         padding-left: 5.3vw;
+        padding-right: 5.3vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        min-height: 172vw;
+        padding-top: 110vw;
       }
     }
   }
@@ -212,6 +265,7 @@ img {
   .feature-section--vrr,
   .feature-section--quality {
     .feature-section__content {
+
       h1,
       h2,
       p {
