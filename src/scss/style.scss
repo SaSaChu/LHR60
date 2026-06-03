@@ -15,7 +15,7 @@ body {
   background: #000;
   color: #fff;
   font-size: 13px;
-  font-family: Arial, "Noto Sans TC", sans-serif;
+  font-family: Arial, "Noto Sans TC", sans-serif !important;
 }
 
 .mobile-break {
@@ -67,8 +67,9 @@ img {
     h1,
     h2 {
       margin: 0 0 2.4vw;
-      font-size: clamp(64px, 3.8vw, 64px);
-      line-height: 1.4;
+      font-size: clamp(64px, 3.8vw, 64px) !important;
+      font-family: Arial, "Noto Sans TC", sans-serif !important;
+      line-height: 1.4 !important;
       font-weight: 800;
       letter-spacing: -0.03em;
     }
@@ -76,8 +77,8 @@ img {
     p {
       width: 52%;
       margin: 0;
-      font-size: clamp(24px, 1.5vw, 24px);
-      line-height: 1.6;
+      font-size: clamp(24px, 1.5vw, 24px) !important;
+      line-height: 1.6 !important;
       font-weight: 400;
       color: rgba(255, 255, 255, 0.92);
     }
@@ -149,14 +150,14 @@ img {
 
       h1,
       h2 {
-        font-size: clamp(44px, 5.2vw, 66px);
+        font-size: clamp(44px, 5.2vw, 66px) !important;
         margin-bottom: 3vw;
       }
 
       p {
         width: 65%;
-        font-size: clamp(18px, 2vw, 18px);
-        line-height: 1.55;
+        font-size: clamp(18px, 2vw, 18px) !important;
+        line-height: 1.55 !important;
       }
 
       &--right {
@@ -188,8 +189,10 @@ img {
       }
     }
   }
+}
 
-  /* iPad 第三區塊：Premium Quality */
+/* 平板（768px ~ 1199px）：第三區塊 Premium Quality */
+@media (min-width: 768px) and (max-width: 1199px) {
   .feature-section--quality {
     .feature-section__content {
       position: absolute;
@@ -205,15 +208,15 @@ img {
       h2 {
         width: 100%;
         margin-bottom: 2vw;
-        font-size: clamp(44px, 5.2vw, 66px);
-        line-height: 1.08;
+        font-size: clamp(44px, 5.2vw, 66px) !important;
+        line-height: 1.08 !important;
       }
 
       p {
         width: 100%;
         max-width: none;
-        font-size: clamp(18px, 2vw, 18px);
-        line-height: 1.55;
+        font-size: clamp(18px, 2vw, 18px) !important;
+        line-height: 1.55 !important;
       }
     }
   }
@@ -236,15 +239,15 @@ img {
       h1,
       h2 {
         width: 100%;
-        font-size: clamp(36px, 2.2rem, 36px);
-        line-height: 1.18;
+        font-size: clamp(36px, 2.2rem, 36px) !important;
+        line-height: 1.18 !important;
         margin-bottom: 3.5vw;
       }
 
       p {
         width: 100%;
-        font-size: clamp(16px, 1.5rem, 16px);
-        line-height: 1.5;
+        font-size: clamp(16px, 1.5rem, 16px) !important;
+        line-height: 1.5 !important;
       }
 
       &--right {
@@ -267,9 +270,17 @@ img {
     .feature-section__content {
 
       h1,
-      h2,
+      h2 {
+        width: 100%;
+        font-size: clamp(36px, 2.2rem, 36px) !important;
+        line-height: 1.18 !important;
+        margin-bottom: 3.5vw;
+      }
+
       p {
         width: 100%;
+        font-size: clamp(16px, 1.5rem, 16px) !important;
+        line-height: 1.5 !important;
       }
     }
   }
