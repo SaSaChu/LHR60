@@ -42,7 +42,7 @@
 * `--env` 縮寫 `-E`，用來代表「環境」，分別有 `Development`、`Testing`、`Staging`、`Production`，預設為 `Production`，可在 `Config.env` 提取使用。
 * `--merge`，是否將 css 與 js 合併至 HTML 的參數，可在 `Config.isMerge` 提取使用。
 * `--val-{key}={val}`，過度資料使用，可在 `Config.argVals` 提取使用。
-* `--url` 縮寫 `-U`，用來代表「baseUrl」，若不給予則為 **空字串**，可在 `Config.baseUrl` 提取使用。
+* `--url` 縮寫 `-U`，用來代表「baseUrl」。建置時若未指定，會使用 `cmd/Config.js` 內 `Build.cdnBaseUrl`，並將 HTML 的 `../`、`./` 資源路徑改為 CDN 絕對網址；傳入空字串 `-U ''` 則維持相對路徑。
 * `--isMinify`，是否壓縮 css 與 js 檔案，可在 `Config.isMinify` 提取使用。
 
 ## 部署

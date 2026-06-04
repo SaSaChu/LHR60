@@ -48,7 +48,10 @@ Queue()
     Helper.Print.ln(`\n ${'【檢查參數】'.yellow}`)
 
     const env      = ArgV.env('Production')
-    const baseUrl  = ArgV.buildUrl()
+    const cliUrl   = ArgV.buildUrl()
+    const baseUrl  = Helper.Type.isNotEmptyString(cliUrl)
+      ? cliUrl
+      : (Config.Build.cdnBaseUrl || '')
     const isMinify = ArgV.min()
     const isMerge  = ArgV.merge()
     const vals     = ArgV.vals()

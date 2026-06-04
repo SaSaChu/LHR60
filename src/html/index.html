@@ -5,18 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROG HDMI Cable Landing Page</title>
 
-  <link rel="stylesheet" href="./css/style.css" />
+  
 </head>
 <body>
-
+  <!-- 路徑 https://dlcdnwebimgs.asus.com/files/media/202605/a5bddeae-aa9c-4b56-86b0-b7b427a4117d/v1/ -->
+  <!-- 這幾個地方需要改名 -->
+  <!-- style.css -> style_main.css -->
+  <!-- high-speed-pc -> high-speed-for-pc.png -->
+  <!-- vrr-pc -> vrr-for-pc.png -->
+  <!-- quality-pc -> quality-for-pc.png -->
+  <!-- 複製以下內容 -->
   <div class="lhr60-page">
-
+    <link rel="stylesheet" type="text/css" href="../css/style_main.css" media="all" />
     <!-- 區塊 1 -->
     <section class="feature-section feature-section--high-speed">
       <picture class="feature-section__bg">
-        <source srcset="./images/high-speed-mobile.png" media="(max-width: 767px)" />
-        <source srcset="./images/high-speed-ipad.png" media="(max-width: 1199px)" />
-        <img src="./images/high-speed-pc.png" alt="Ultra High Speed HDMI Cable" />
+        <source srcset="../images/high-speed-mobile.png" media="(max-width: 767px)" />
+        <source srcset="../images/high-speed-ipad.png" media="(max-width: 1199px)" />
+        <img src="../images/high-speed-pc.png" alt="Ultra High Speed HDMI Cable" />
+        
       </picture>
 
       <div class="feature-section__content feature-section__content--left">
@@ -30,9 +37,9 @@
     <!-- 區塊 2 -->
     <section class="feature-section feature-section--vrr">
       <picture class="feature-section__bg">
-        <source srcset="./images/vrr-mobile.png" media="(max-width: 767px)" />
-        <source srcset="./images/vrr-ipad.png" media="(max-width: 1199px)" />
-        <img src="./images/vrr-pc.png" alt="Smooth Graphics Via HDMI VRR" />
+        <source srcset="../images/vrr-mobile.png" media="(max-width: 767px)" />
+        <source srcset="../images/vrr-ipad.png" media="(max-width: 1199px)" />
+        <img src="../images/vrr-pc.png" alt="Smooth Graphics Via HDMI VRR" />
       </picture>
 
       <div class="feature-section__content feature-section__content--left">
@@ -46,9 +53,9 @@
     <!-- 區塊 3 -->
     <section class="feature-section feature-section--quality">
       <picture class="feature-section__bg">
-        <source srcset="./images/quality-mobile.png" media="(max-width: 767px)" />
-        <source srcset="./images/quality-ipad.png" media="(max-width: 1199px)" />
-        <img src="./images/quality-pc.png" alt="Premium Quality" />
+        <source srcset="../images/quality-mobile.png" media="(max-width: 767px)" />
+        <source srcset="../images/quality-ipad.png" media="(max-width: 1199px)" />
+          <img src="../images/quality-pc.png" alt="Premium Quality" />
       </picture>
 
       <div class="feature-section__content feature-section__content--right">
@@ -61,6 +68,6 @@
 
   </div>
 
-  <script src="./js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

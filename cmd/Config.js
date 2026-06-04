@@ -52,7 +52,17 @@ module.exports = {
 
   Build: {
     path: 'dist',
-    
+
+    // dist 輸出時將 HTML 內 ../ 、 ./ 資源路徑改為 CDN（可用 -U 覆寫）
+    cdnBaseUrl: 'https://dlcdnwebimgs.asus.com/files/media/202605/a5bddeae-aa9c-4b56-86b0-b7b427a4117d/v1/',
+
+    // 上傳 CDN 時檔名與開發目錄不同時，在此對應（key 為 HTML 內相對路徑）
+    assetMap: {
+      'images/high-speed-pc.png': 'images/high-speed-for-pc.png',
+      'images/vrr-pc.png': 'images/vrr-for-pc.png',
+      'images/quality-pc.png': 'images/quality-for-pc.png',
+    },
+
     autoOpenFolder: false, // 自動開啟目錄
 
     jsMinify: { // JS minify 時外加的轉譯

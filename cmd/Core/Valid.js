@@ -18,6 +18,26 @@ const Helper     = require('@oawu/_Helper')
 const Config     = require('@oawu/_Config')
 const Sigint     = require('@oawu/_Sigint')
 
+const rewriteAssetUrls = (html, baseUrl, assetMap = {}) => {
+  if (!Helper.Type.isNotEmptyString(baseUrl)) {
+    return html
+  }
+
+  const base = `${baseUrl.replace(/\/+$/, '')}/`
+  const toCdn = relPath => {
+    let path = relPath.replace(/^\.+\//, '')
+    if (assetMap[path]) {
+      path = assetMap[path]
+    }
+    return `${base}${path}`
+  }
+
+  return html.replace(
+    /(\s(?:href|src|srcset)\s*=\s*["'])(\.\.?\/[^"']+)(["'])/gi,
+    (m, prefix, relPath, suffix) => `${prefix}${toCdn(relPath)}${suffix}`
+  )
+}
+
 const buildHtml = (file, closure) => {
   const dog = Dog().bite(food => {
     if (food instanceof Error) {
@@ -735,9 +755,12 @@ module.exports = {
                 return cli.fail(null, ...errors)
               }
 
+              const assetMap = Config.Build.assetMap || {}
+              const html = rewriteAssetUrls(data, Config.baseUrl, assetMap)
+
               FileSystem.writeFile(file.dist.path, Config.isMinify
-                ? Minify(data, { collapseWhitespace: true, continueOnParseError: false })
-                : data, 'utf8', error => {
+                ? Minify(html, { collapseWhitespace: true, continueOnParseError: false })
+                : html, 'utf8', error => {
 
                   if (error) {
                     return cli.fail(null, `無法寫入 ${Path.$.rRoot(file.dist.path)}`, error)
