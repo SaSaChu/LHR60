@@ -133,6 +133,92 @@ img {
   }
 }
 
+/* 網頁版本 */
+@media (max-width: 1599px) {
+  .mobile-break {
+    display: inline;
+  }
+
+  .feature-section {
+    min-height: 72.65vw;
+
+    &__content {
+      padding-top: 5.2vw !important;
+      padding-left: 4.8vw;
+      padding-right: 4.8vw;
+
+      h1,
+      h2 {
+        font-size: clamp(44px, 5.2vw, 66px);
+        margin-bottom: 3vw;
+      }
+
+      p {
+        width: 65%;
+        font-size: clamp(18px, 2vw, 1.6vw);
+        line-height: 1.55;
+      }
+
+      &--right {
+        padding-left: 50vw;
+
+        p {
+          max-width: 480px;
+        }
+      }
+    }
+  }
+
+  .feature-section--high-speed {
+    .feature-section__content {
+      h1 {
+        width: 76%;
+      }
+    }
+  }
+
+  .feature-section--vrr {
+    .feature-section__content {
+      h2 {
+        width: 65%;
+      }
+
+      p {
+        width: 40%;
+      }
+    }
+  }
+
+  /* iPad 第三區塊：Premium Quality */
+  .feature-section--quality {
+    .feature-section__content {
+      position: absolute;
+      z-index: 2;
+
+      top: 46%;
+      right: 6.5vw;
+      transform: translateY(-10%);
+
+      width: 32vw;
+      padding: 0 !important;
+
+      h2 {
+        width: 100%;
+        margin-bottom: 2vw;
+        font-size: clamp(44px, 5.2vw, 66px);
+        line-height: 1.08;
+      }
+
+      p {
+        width: 100%;
+        max-width: none;
+        font-size: clamp(18px, 2vw, 18px);
+        line-height: 1.55;
+      }
+    }
+  }
+}
+
 /* iPad / 平板 */
 @media (max-width: 1199px) {
   .mobile-break {
